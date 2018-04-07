@@ -1,0 +1,4 @@
+mitie
+pkg-resources
+PyAudio
+SpeechRecognition
