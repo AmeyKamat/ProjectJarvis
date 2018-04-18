@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<!-- Taken from tutorialspoint.com -->
+<html>
+<head>
+<script type="text/javascript">
+
+  if ("WebSocket" in window)
+  {
+     var ws = new WebSocket("ws://localhost:8000/websocket");
+     ws.onopen = function()
+     {
+        // Web Socket is connected, send data using send()
+        ws.send("Hello server");
+        alert("Message is sent...");
+     };
+     ws.onmessage = function (evt) 
+     { 
+        var received_msg = evt.data;
+        alert("Message is received:\n" + evt.data);
+     };
+     ws.onclose = function()
+     { 
+        // websocket is closed.
+        alert("Connection is closed..."); 
+     };
+  }
+  else
+  {
+     // The browser doesn't support WebSocket
+     alert("WebSocket NOT supported by your Browser!");
+  }
+
+  function run(){
+    ws.send(document.getElementById("1").value);
+  }
+</script>
+</head>
+<body>
+  <input type="text" id="1"/>
+  <button id="2" onclick="run()">try</button>
+	<div id="sse">
+		<a href="javascript:WebSocketTest()">Run WebSocket</a>
+	</div>
+</body>
+</html>
+© 2018 Git
