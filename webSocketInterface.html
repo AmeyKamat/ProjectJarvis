@@ -9,19 +9,15 @@
      var ws = new WebSocket("ws://localhost:8000/websocket");
      ws.onopen = function()
      {
-        // Web Socket is connected, send data using send()
-        ws.send("Hello server");
-        alert("Message is sent...");
      };
      ws.onmessage = function (evt) 
      { 
         var received_msg = evt.data;
-        alert("Message is received:\n" + evt.data);
+        document.getElementById("3").innerHTML += received_msg + "<br/>"
      };
      ws.onclose = function()
      { 
-        // websocket is closed.
-        alert("Connection is closed..."); 
+        window.close()
      };
   }
   else
@@ -38,6 +34,7 @@
 <body>
   <input type="text" id="1"/>
   <button id="2" onclick="run()">try</button>
+  <div id=3></div>
 	<div id="sse">
 		<a href="javascript:WebSocketTest()">Run WebSocket</a>
 	</div>

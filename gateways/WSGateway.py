@@ -22,6 +22,6 @@ class WSGateway(Component):
 	def disconnect(self, sock):
 		self.socket = None
 
-	@handler("IntentConfidenceCheckFailedEvent")
-	def handleIntentConfidenceCheckFailedEvent(self):
-		self.fireEvent(write(self.socket, "I did not understand what you just said"))
+	@handler("DialogReadyEvent")
+	def handleDialogReadyEvent(self, message):
+		self.fireEvent(write(self.socket, message))

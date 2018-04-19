@@ -1,9 +1,16 @@
+import webbrowser
+import os
+
 from circuits import Debugger
 from circuits.web.dispatchers import WebSocketsDispatcher
 from circuits.web import Logger, Server, Static
 
 from components.SementicAnalyserComponent import SementicAnalyserComponent 
 from components.ContextBuilderComponent import ContextBuilderComponent
+from components.EntityAnalyserComponent import EntityAnalyserComponent
+from components.EntityPreprocessorComponent import EntityPreprocessorComponent
+from components.JobRunnerComponent import JobRunnerComponent
+from components.DialogGeneratorComponent import DialogGeneratorComponent
 from gateways.WSGateway import WSGateway
 
 IP_ADDR = "0.0.0.0"
@@ -12,7 +19,11 @@ PORT = 8000
 BOOTSTRAP_MODULES = {
 	"appComponents": [
 		SementicAnalyserComponent(),
-		ContextBuilderComponent()
+		ContextBuilderComponent(),
+		EntityAnalyserComponent(),
+		EntityPreprocessorComponent(),
+		JobRunnerComponent(),
+		DialogGeneratorComponent()
 	],
 	"gateways": [
 		WSGateway()
@@ -46,9 +57,12 @@ def bootstrapCircuitComponents(app, circuitComponents):
 
 
 
-app = Server(("0.0.0.0", 8000))
+app = Server((IP_ADDR, PORT))
 bootstrapAppComponents(app, BOOTSTRAP_MODULES["appComponents"])
 bootstrapGateways(app, BOOTSTRAP_MODULES["gateways"])
 bootstrapDispatchers(app, BOOTSTRAP_MODULES["dispatchers"])
 bootstrapCircuitComponents(app, BOOTSTRAP_MODULES["circuitComponents"])
+
+webbrowser.open('file://' + os.path.realpath("webSocketInterface.html"))
+
 app.run()

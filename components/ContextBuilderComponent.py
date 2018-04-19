@@ -9,7 +9,7 @@ class ContextBuilderComponent(Component):
 	contextStack = []
 
 	@handler("MessageAnalysedEvent")
-	def MessageReceivedEvent(self, intent, confidence, entities):
+	def handleMessageAnalysedEvent(self, intent, confidence, entities):
 		if confidence>0.8:
 			self.contextStack.append(Context(intent, entities))
 			self.fire(ContextBuiltEvent(intent, entities))
