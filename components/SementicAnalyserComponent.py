@@ -1,16 +1,14 @@
 from circuits import Component, handler
 
 from events.MessageAnalysedEvent import MessageAnalysedEvent
+from sementicAnalysis.SementicAnalyser import SementicAnalyser
 
 class SementicAnalyserComponent(Component):
 
+	sementicAnalyser = SementicAnalyser()
+
 	@handler("MessageReceivedEvent")
 	def handleMessageReceivedEvent(self, message):
-		print("started")
-		if message == "where is mumbai":
-			self.fire(MessageAnalysedEvent("location", 0.967, {"LOCATION": "mumbai"}))
-		elif message == "sleep":
-			self.fire(MessageAnalysedEvent("shut-down", 0.732, {}))
-		elif message == "where is pune":
-			self.fire(MessageAnalysedEvent("location", 0.932, {}))
+		intent, confidence, entities = self.sementicAnalyser.analyse(message)
+		self.fire(MessageAnalysedEvent(intent, confidence, entities))
 

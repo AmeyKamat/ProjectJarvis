@@ -10,6 +10,8 @@ import json
 
 class WSGateway(Component):
 
+	channel="wsserver"
+
 	socket = None
 
 	def read(self, sock, message):
@@ -24,4 +26,13 @@ class WSGateway(Component):
 
 	@handler("DialogReadyEvent")
 	def handleDialogReadyEvent(self, message):
-		self.fireEvent(write(self.socket, message))
+		self.fire(write(self.socket, message))
+
+class Root(Controller):
+
+	tpl = "./webSocketInterface.html"
+
+	def index(self):
+		with open(self.tpl, 'r') as content_file:
+			return content_file.read()
+

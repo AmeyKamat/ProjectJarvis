@@ -7,9 +7,8 @@
   if ("WebSocket" in window)
   {
      var ws = new WebSocket("ws://localhost:8000/websocket");
-     ws.onopen = function()
-     {
-     };
+     ws.onopen = function(){};
+     
      ws.onmessage = function (evt) 
      { 
         var received_msg = evt.data;
@@ -19,6 +18,59 @@
      { 
         window.close()
      };
+
+     if ('webkitSpeechRecognition' in window) {
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = "en-US"
+        var final_transcript = '';
+        isStarted = false;
+
+        recognition.onstart = function() {};
+
+        recognition.onerror = function(event) {};
+
+        recognition.onend = function() {};
+
+        recognition.onresult = function(event) {
+          var interim_transcript = '';
+          for (var i = event.resultIndex; i < event.results.length; ++i) {
+            if (event.results[i].isFinal) {
+              final_transcript += event.results[i][0].transcript;
+              ws.send(final_transcript);
+              document.getElementById("3").innerHTML += "Sent Message: " + final_transcript + "<br/>"
+              final_transcript = ""
+              interim_transcript = ""
+            } else {
+              interim_transcript += event.results[i][0].transcript;
+            }
+          }
+        };
+
+        window.onkeydown=function(ev)
+        {
+          var e= ev || window.event,
+          key = e.keyCode
+          if ((key===13) && (e.location===3)) {
+            if(isStarted == false)
+            recognition.start()
+            isStarted = true
+          }
+        }
+
+         window.onkeyup=function(ev)
+        {
+          var e= ev || window.event,
+          key = e.keyCode
+          if ((key===13) && (e.location===3)) {
+            if(isStarted = true){
+              recognition.stop()
+              isStarted = false
+            }
+          }
+        }
+     }
   }
   else
   {

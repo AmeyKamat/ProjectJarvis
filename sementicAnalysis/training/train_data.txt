@@ -1,0 +1,372 @@
+hi|greet
+hello|greet
+what time is it|time
+give me the directions to agra|direction|TOLOCATION,26,30
+where am i|self-location
+where is mumbai|location|LOCATION,9,15
+what is my location|self-location
+search for olympics|search-general|QUERY,11,19
+show me the chinese restaurants around me|search-restaurants|CUISINE,12,19
+yes|affirmation
+ya|affirmation
+no|negation
+nah|negation
+launch Photoshop|launch|SOFTWARE,7,16
+tell me the sports news|news|NEWSCATEGORY,12,18
+show me wikipedia article on India|search-wikipedia|QUERY,29,34
+sleep|shut-down
+I am hungry|search-restaurants
+tell me about Hinduism|search-general|QUERY,14,22
+not that|negation
+never|negation
+I am proud of you|compliment
+off course|affirmation
+where am I right now|self-location
+list some indian food joints around|search-restaurants|CUISINE,10,16
+explore Racism|search-general|QUERY,8,14
+who was Napolean|search-general|QUERY,8,16
+what is today's news|news|DATE,8,13
+open Chrome|launch|SOFTWARE,5,11
+hey there|greet
+awesome|compliment
+great|compliment
+what is the time now|time
+what does your watch show|time
+shhh|shut-down
+shut down|shut-down
+thanks|compliment
+you are so awesome|compliment
+point to California|location|LOCATION,9,19
+what is my surroundings called|self-location
+show interesting places around me|search-general|QUERY,5,33
+pinpoint my location|self-location
+you are awesome|compliment
+show me some awesome receipes|search-general|QUERY,14,29
+Can you list hotels around me|search-restaurants
+is there a news today regarding president|news|DATE,16,21|QUERY,32,41
+who is tim cook|question|QUERY,7,15
+show me article regarding apple|search-wikipedia|QUERY,26,31
+are there any mexican restaurants in Mulund|search-restaurants|CUISINE,14,21|LOCATION,37,43
+is president ill|search-general
+is Kurla in mumbai|search-general
+search wikipedia for Cricket|search-wikipedia|QUERY,21,28
+open microsoft word|launch|SOFTWARE,5,19
+wonderful|compliment
+not that|negation
+hey there|greet
+search for soft kitty|search-general|QUERY,11,21
+get me a wikipedia article of nasa|search-wikipedia|QUERY,30,34
+lookup ideas to open up a business|search-general|QUERY,7,34
+look for some awesome food restaurant around|search-restaurants
+tell me about russian revolution|search-general|QUERY,14,32
+what time is it in Tanzania|time|LOCATION,19,27
+yeah|affirmation
+tell me about mexican food joints around me|search-restaurants|CUISINE,14,21
+can you fetch me a wikipedia article on metros|search-wikipedia|QUERY,40,46
+who was called father of India|question|QUERY,15,30
+goodbye|shut-down
+where is Eifel Tower|location|LOCATION,9,20
+what is the location where i am standing called|self-location
+Who is president of USA|search-general|QUERY,7,23
+can you pinpoint my location|self-location
+can you show me restaurants in Delhi|search-restaurants|LOCATION,31,36
+where is agra|location|LOCATION,9,13
+show me where is Machu Pichu|location|LOCATION,17,28
+what time is it|time
+hey|greet
+good night|shut-down
+look up for chinese food courts around|search-restaurants|CUISINE,12,19
+who is jon oliver|question|QUERY,7,17
+how to run python script|search-general
+where is jantar mantar|location|LOCATION,9,22
+hi|greet
+goodbye|shut-down
+what is the time right now|time
+is there any news about president today|news|QUERY,24,33|DATE,34,39
+show me the news related to business|news|NEWSCATEGORY,28,36
+how do i reach pune|direction|TOLOCATION,15,19
+no|negation
+great work|compliment
+how to cope with loneliness|search-general
+how to go to sinhagad|direction|TOLOCATION,13,21
+great job|compliment
+which is the greatest tv series of all time|search-general|QUERY,9,43
+give me wikipedia article on india|search-wikipedia|QUERY,29,34
+give me article on animal kingdom|search-general|QUERY,19,33
+not at all|negation
+how do i go to sarnath|direction|TOLOCATION,15,22
+how to code in c plus plus|search-general
+bye bye|shut-down
+hello|greet
+brilliant|compliment
+what is the news in sports today|news|NEWSCATEGORY,20,26|DATE,27,32
+what does your watch show|time
+what is barclays|search-general|QUERY,8,16
+never|negation
+offcourse|affirmation
+what is the time now|time
+hello sweetie|greet
+did something happen in world politics today|news|NEWSCATEGORY,24,38|DATE,39,44
+open vlc player|launch|SOFTWARE,5,15
+get me wikipedia article on star wars|search-wikipedia|QUERY,28,37
+where am i at this moment|self-location
+who is narendra modi|question|QUERY,8,20
+search for himalayas|search-general|QUERY,11,20
+explore time shift|search-general|QUERY,8,18
+how to paint walls|search-general
+where am i|self-location
+run python|launch|SOFTWARE,4,10
+open notepad|launch|SOFTWARE,5,12
+what is the time|time
+which noble gas is most inert|search-general
+hello|greet
+sleep now|shut-down
+hi|greet
+yes|affirmation
+point to california|location|LOCATION,9,19
+how to go from mumbai to pune|direction|FROMLOCATION,15,21|TOLOCATION,25,29
+offcourse not|negation
+offcourse|affirmation
+launch libreoffice writer|launch|SOFTWARE,7,25
+show kerala on map|location|LOCATION,5,11
+where is karnataka|location|LOCATION,9,18
+give me best hotels around|search-restaurants
+what is illuminati|question|QUERY,8,18
+what time is it now|time
+good bye|shut-down
+show me thai restaurants in pune|search-restaurants|CUISINE,8,12|LOCATION,28,32
+i do not want this|negation
+open calculator|launch|SOFTWARE,5,15
+search barrack obama|search-general|QUERY,7,20
+look up hundai|search-general|QUERY,8,14
+hey|greet
+open excel|launch|SOFTWARE,5,10
+open wikipedia article for mcdonalds|search-wikipedia|QUERY,27,36
+good night|shut-down
+direct me to pondicherry|direction|TOLOCATION,13,24
+show me the time|time
+what is my location|self-location
+which duct tape is better|search-general
+does injection hurt|search-general
+why does elon musk hate facebook|search-general
+hi|greet
+sleep|shut-down
+what is watergate scandal|question|QUERY,8,25
+who killed kennedy|question
+point germany on map|location|LOCATION,6,13
+what is the time now|time
+who was king arthur|question|QUERY,8,19
+fantastic|compliment
+show me where iran is|location|LOCATION,14,18
+good bye|shut-down
+goodbye|shut-down
+hi|greet
+great work|compliment
+open autocad|launch|SOFTWARE,5,12
+hi|greet
+what does your watch show|time
+how to go from malad to andheri|direction|FROMLOCATION,15,20|TOLOCATION,24,31
+not there|negation
+is there anything on news today|news|DATE,26,31
+not bad|compliment
+great|compliment
+amazing|compliment
+run word|launch|SOFTWARE,4,8
+where the hell am i|self-location
+where am i|self-location
+what the hell is my location|self-location
+get me some food joints around|search-restaurants
+get me some resaurants around|search-restaurants
+show me some mexican restaurants around|search-restaurants|LOCATION,13,20
+what is this place|self-location
+tell me the current time|time
+offcourse|affirmation
+good bye|shut-down
+offcourse not|negation
+that is great|compliment
+which are the hotels around me|search-restaurants
+show me pune on the map|location|LOCATION,8,12
+execute sublime|launch|SOFTWARE,8,15
+open sublime|launch|SOFTWARE,5,12
+hello|greet
+lookup for Ellora caves|search-general|QUERY,11,23
+show me wikipedia article on the last supper|search-wikipedia|QUERY,29,44
+show me the article on trust|search-general|QUERY,23,28
+tell me about schrodinger's cat|search-general|QUERY,14,31
+certainly|affirmation
+bravo|compliment
+good bye|shut-down
+you are so awesome|compliment
+excellent|compliment
+yes|affirmation
+no|negation
+show me food joints around|search-restaurants
+where am i|self-location
+open chrome|launch|SOFTWARE,5,11
+what happened in politics today|news|NEWSCATEGORY,17,25|DATE,26,31
+obviously|affirmation
+hi|greet
+how does machine learning work|search-general
+i m hungry|search-restaurants
+where is kutub minar in india|location|LOCATION,9,29
+who is senator of texas|question|QUERY,7,23
+when is christmas celebrated|question
+show me some chinese hotels around|search-restaurants|CUISINE,13,20
+search for chinese dishes|search-general|QUERY,11,25
+find me some awesome mexican dishes|search-general|QUERY,13,35
+locate peru|location|LOCATION,7,11
+offcourse not|negation
+what happened in sports today|news|NEWSCATEGORY,17,23|DATE,24,29
+good bye|shut-down
+goodbye|shut-down
+search wikipedia for list of fastest men on earth|search-wikipedia|QUERY,21,49
+certainly|affirmation
+never|negation
+can you get me the list of presidents of india|search-general|QUERY,15,46
+i am hungry|search-restaurants
+what is the time at this exact moment|time
+search for wikipedia donation|search-general|QUERY,11,29
+good work|compliment
+good morning|greet
+amazing work|compliment
+look for world war 3|search-general|QUERY,9,20
+sleep|shut-down
+what does your watch show|time
+tell me about jesus christ|search-general|QUERY,14,26
+execute python|launch|SOFTWARE,8,14
+why is wikipedia free|search-general
+obviously|affirmation
+good night|shut-down
+point to great wall of china on map|location|LOCATION,9,28
+is it too difficult to start indian restaurant|search-general
+explore time travel|search-general|QUERY,8,19
+look up a wonderful song|search-general|QUERY,8,24
+should i go for engineering|search-general
+how to go from dubai to taiwan|direction|FROMLOCATION,15,20|TOLOCATION,24,30
+how to go to himachal|direction|TOLOCATION,13,21
+please show me the road from lahore to chandigarh|direction|FROMLOCATION,29,35|TOLOCATION,39,49
+how much does a flight cost from hyderabad to jaipur|search-general
+should i be a waiter|search-general
+who was hitler|search-general|QUERY,8,14
+who gives money to wikipedia|search-general
+fetch me wikipedia article on nehru|search-wikipedia|QUERY,30,35
+can you give me directions to tamil nadu|direction|TOLOCATION,30,40
+can you give me directions on my life|search-general
+do trees sing|search-general
+lookup on satellite launch|search-general|QUERY,10,26
+lauch nautilus|launch|SOFTWARE,6,14
+launch explorer|launch|SOFTWARE,7,15
+how to go to london|direction|TOLOCATION,13,19
+definitely|affirmation
+nah|negation
+how do i control my restaurant|search-general
+i would like to see some information on tardis|search-general|QUERY,40,46
+where did amy go|search-general
+offcourse|affirmation
+yes|affirmation
+please fetch me information regarding social science|search-general|QUERY,38,52
+how do i write hell world program in c|search-general
+how to start dancing|search-general
+pinpoint cambodia on map|location|LOCATION,9,17
+show me information regarding coffee|search-general|QUERY,30,36
+how do i write poems|search-general
+how do i start playing flute|search-general
+how do i visit mogolia|direction|QUERY,15,22
+what is my surroundings called|self-location
+information on new york please|search-general|QUERY,15,23
+give me something on headache|search-general|QUERY,21,29
+give me directions from margao to ponda|direction|FROMLOCATION,24,30|TOLOCATION,34,39
+how do i travel from shimla to manali|direction|FROMLOCATION,21,27|TOLOCATION,31,37
+hi|greet
+show me where lonar crater is|location|LOCATION,14,26
+i don't want this|negation
+i want to be fairy|search-general
+search food stalls around ponda|search-restaurants|LOCATION,26,31
+look up food wastage|search-general|QUERY,8,20
+how to travel to jwalamukhi|direction|TOLOCATION,17,27
+what are support vector machines|search-general|QUERY,9,32
+show me information on time loop|search-general|QUERY,23,32
+where am i|self-location
+tell me about isro launch|search-general|QUERY,14,25
+does launching new car help ford|search-general
+what are support vector machines|search-general|QUERY,9,32
+get me details of narcos|search-general|QUERY,18,24
+what time is it in london|time|LOCATION,19,25
+show me some news in afganistan|news|LOCATION,21,31
+what happened in business today|news|NEWSCATEGORY,17,25|DATE,26,31
+what happened to michael jackson|search-general
+tell me what happened in india today|news|LOCATION,25,30|DATE,31,36
+i am hungry|search-restaurants
+how do i visit washington|direction|TOLOCATION,15,25
+how do i use dry cleaner|search-general
+give me a receipe of mango shake|search-general|QUERY,8,32
+can you provide me way to build ship|search-general|QUERY,19,36
+can you provide me list of hotels around|search-restaurants
+hunger is killing me|search-restaurants
+i am terribly hungry|search-restaurants
+what do you know about david tennant|search-general|QUERY,23,36
+how does barclays work|search-general
+where is honda's office|location|LOCATION,9,23
+search time travel|search-general|QUERY,7,18
+try getting information on Santhals|search-general|QUERY,27,35
+try opening word|launch|SOFTWARE,12,16
+try searching for restaurants around|search-restaurants
+sleep|shut-down
+good morning|greet
+that's great|compliment
+stupendous|compliment
+brilliant|compliment
+not at all|negation
+offcourse|affirmation
+certainly|affirmation
+try pulling article from wikipedia on maruti|search-wikipedia|QUERY,38,44
+pull details on wikipedia office|search-general|QUERY,16,32
+pull article on wikipedia|search-general|QUERY,16,5
+can you open calibre|launch|SOFTWARE,13,20
+please open explorer|launch|SOFTWARE,12,20
+can you please launch terminal|launch|SOFTWARE,22,30
+please help me getting info on classical music|search-general|QUERY,31,46
+please help me launching powerpoint|launch|SOFTWARE,25,35
+can you launch paint for me|launch|SOFTWARE,15,20
+can you get news for me|news
+can you pull out wikipedia article on neural network|search-wikipedia|QUERY,38,52
+who is wikipedia's founder|search-general|QUERY,7,26
+try pulling wikipedia article on wikipedia|search-wikipedia|QUERY,33,42
+try getting list of indian food stalls around|search-restaurants|CUISINE,20,26
+get food receipes from india|search-general|QUERY,4,28
+how to visit jammu|direction|TOLOCATION,12,17
+tell me route to imphal|direction|TOLOCATION,17,23
+show me where kohima is|location|TOLOCATION,14,20
+direct me to mumbai|direction|TOLOCATION,13,19
+howdy|greet
+good afternoon|greet
+good evening|greet
+good bye|shut-down
+goodbye|shut-down
+tata|shut-down
+what is the time in new york|time|LOCATION,20,28
+How to travel to Nigeria|direction|TOLOCATION,17,24
+how to travel to Nigeria from South Africa|direction|TOLOCATION,17,24|FROMLOCATION,30,42
+how to travel from South Africa to Nigeria|direction|TOLOCATION,35,42|FROMLOCATION,19,31
+search for adam ruins everything|search-general|QUERY,11,32
+show me news from india|news|LOCATION,18,23
+show me some goan restaurants around|search-restaurants|CUISINE,13,17
+what is the time in london right now|time|LOCATION,20,26
+how should i visit paris from norway|direction|TOLOCATION,19,24|FROMLOCATION,30,36
+how do i go from gujrat to delhi|direction|FROMLOCATION,16,22|TOLOCATION,26,31
+show me the route to italy|direction|TOLOCATION,21,26
+show me the route from mohali to shimla|direction|FROMLOCATION,23,29|TOLOCATION,33,39
+get me business news last week|news|NEWSCATEGORY,7,15|DATE,21,30
+what is the time in wilmington now|time|LOCATION,20,30
+how to visit haveli|direction|TOLOCATION,13,19
+direct me to mcdonalds|direction|TOLOCATION,13,22
+get me indian curry hotels|search-restaurants|CUISINE,7,19
+show me restaurants in chennai serving burgers|search-restaurants|CUISINE,39,46|LOCATION,23,30
+show me restaurants serving burgers in raipur|search-restaurants|CUISINE,28,35|LOCATION,39,45
+show me restaurants serving burgers|search-restaurants|CUISINE,28,35
+get me restaurants serving malwani fish|search-restaurants|CUISINE,27,39
+show me the route to pune from mumbai|direction|TOLOCATION,21,25|FROMLOCATION,31,37
+who is chaitanya sharma|search-general|QUERY,7,23
+can you book a cab for me at 3.20 PM from Malad to Borivali|bookcab|TIME,31,38|FROMLOCATION,44,49|TOLOCATION,53,61
+Remind me at 8.30 to bring my clothes|reminder|TIME,15,19|REMINDERTEXT,20,39
+give me route from ratnagiri to goa|direction|FROMLOCATION,21,30|TOLOCATION,34,37

@@ -12,6 +12,7 @@ class ContextBuilderComponent(Component):
 	def handleMessageAnalysedEvent(self, intent, confidence, entities):
 		if confidence>0.8:
 			self.contextStack.append(Context(intent, entities))
+			print("Context created: " + str(self.contextStack[-1]))
 			self.fire(ContextBuiltEvent(intent, entities))
 		else:
 			self.fire(IntentConfidenceCheckFailedEvent())

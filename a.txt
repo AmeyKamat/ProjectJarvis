@@ -1,0 +1,14 @@
+Created new window in existing browser session.
+127.0.0.1 - - [22/Apr/2018:23:56:41] "GET / HTTP/1.1" 200 2507 "" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+127.0.0.1 - - [22/Apr/2018:23:56:41] "GET /websocket HTTP/1.1" 101 0 "" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+127.0.0.1 - - [22/Apr/2018:23:56:45] "GET / HTTP/1.1" 200 2507 "" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+127.0.0.1 - - [22/Apr/2018:23:56:45] "GET /websocket HTTP/1.1" 101 0 "" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+Intent: search-general Confidence: 0.999954581261 Entities: {u'QUERY': u'honey'}
+Context created: <context.Context.Context object at 0x7fdf222a7b10>
+Intent: bookcab Confidence: 0.33628988266 Entities: {u'TOLOCATION': u'Thane'}
+Intent: direction Confidence: 0.995069026947 Entities: {u'FROMLOCATION': u'Mumbai'}
+Context created: <context.Context.Context object at 0x7fdf222a7890>
+Intent: direction Confidence: 0.998040497303 Entities: {u'FROMLOCATION': u'Mumbai', u'TOLOCATION': u'Thane'}
+Context created: <context.Context.Context object at 0x7fdf22f4e150>
+Intent: direction Confidence: 0.017103401944 Entities: {}
+Intent: bookcab Confidence: 0.343233346939 Entities: {u'QUERY': u'3:38', u'TOLOCATION': u'Thane'}

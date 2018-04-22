@@ -11,7 +11,7 @@ from components.EntityAnalyserComponent import EntityAnalyserComponent
 from components.EntityPreprocessorComponent import EntityPreprocessorComponent
 from components.JobRunnerComponent import JobRunnerComponent
 from components.DialogGeneratorComponent import DialogGeneratorComponent
-from gateways.WSGateway import WSGateway
+from gateways.WSGateway import WSGateway, Root
 
 IP_ADDR = "0.0.0.0"
 PORT = 8000
@@ -26,7 +26,8 @@ BOOTSTRAP_MODULES = {
 		DialogGeneratorComponent()
 	],
 	"gateways": [
-		WSGateway()
+		WSGateway(),
+		Root()
 	],
 	"dispatchers": [
 		WebSocketsDispatcher("/websocket")
@@ -63,6 +64,6 @@ bootstrapGateways(app, BOOTSTRAP_MODULES["gateways"])
 bootstrapDispatchers(app, BOOTSTRAP_MODULES["dispatchers"])
 bootstrapCircuitComponents(app, BOOTSTRAP_MODULES["circuitComponents"])
 
-webbrowser.open('file://' + os.path.realpath("webSocketInterface.html"))
+webbrowser.open('http://localhost:8000')
 
 app.run()
