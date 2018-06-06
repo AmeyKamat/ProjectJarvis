@@ -5,18 +5,26 @@ from circuits import Component, handler
 from circuits.web import Controller
 
 from events.MessageReceivedEvent import MessageReceivedEvent
+from context.Context import Context
 
 import json
+import jsonpickle
 
 class WSGateway(Component):
 
 	channel="wsserver"
 
-	socket = None
+	connections = {}
 
 	def read(self, sock, message):
-		#self.fireEvent(write(sock, "Received: " + message))
-		self.fire(MessageReceivedEvent(message))
+		#messageJson = json.loads(message)
+
+		#if sock not in self.connections:
+		#	self.connections[sock] = {}
+		#	self.connections[sock]["type"] = messageJson["type"]
+			
+		print(message)
+		self.fire(MessageReceivedEvent(Context(message)))
 
 	def connect(self, sock, host, port):
 		self.socket = sock
@@ -25,8 +33,9 @@ class WSGateway(Component):
 		self.socket = None
 
 	@handler("DialogReadyEvent")
-	def handleDialogReadyEvent(self, message):
-		self.fire(write(self.socket, message))
+	def handleDialogReadyEvent(self, context):
+		print(jsonpickle.encode(context))
+		self.fire(write(self.socket, jsonpickle.encode(context)))
 
 class Root(Controller):
 

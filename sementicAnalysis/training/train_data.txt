@@ -16,7 +16,7 @@ tell me the sports news|news|NEWSCATEGORY,12,18
 show me wikipedia article on India|search-wikipedia|QUERY,29,34
 sleep|shut-down
 I am hungry|search-restaurants
-tell me about Hinduism|search-general|QUERY,14,22
+tell me about Hinduism|question|QUERY,14,22
 not that|negation
 never|negation
 I am proud of you|compliment
@@ -24,7 +24,7 @@ off course|affirmation
 where am I right now|self-location
 list some indian food joints around|search-restaurants|CUISINE,10,16
 explore Racism|search-general|QUERY,8,14
-who was Napolean|search-general|QUERY,8,16
+who was Napolean|question|QUERY,8,16
 what is today's news|news|DATE,8,13
 open Chrome|launch|SOFTWARE,5,11
 hey there|greet
@@ -58,7 +58,7 @@ search for soft kitty|search-general|QUERY,11,21
 get me a wikipedia article of nasa|search-wikipedia|QUERY,30,34
 lookup ideas to open up a business|search-general|QUERY,7,34
 look for some awesome food restaurant around|search-restaurants
-tell me about russian revolution|search-general|QUERY,14,32
+tell me about russian revolution|question|QUERY,14,32
 what time is it in Tanzania|time|LOCATION,19,27
 yeah|affirmation
 tell me about mexican food joints around me|search-restaurants|CUISINE,14,21
@@ -67,7 +67,7 @@ who was called father of India|question|QUERY,15,30
 goodbye|shut-down
 where is Eifel Tower|location|LOCATION,9,20
 what is the location where i am standing called|self-location
-Who is president of USA|search-general|QUERY,7,23
+Who is president of USA|question|QUERY,7,23
 can you pinpoint my location|self-location
 can you show me restaurants in Delhi|search-restaurants|LOCATION,31,36
 where is agra|location|LOCATION,9,13
@@ -77,7 +77,7 @@ hey|greet
 good night|shut-down
 look up for chinese food courts around|search-restaurants|CUISINE,12,19
 who is jon oliver|question|QUERY,7,17
-how to run python script|search-general
+how to run python script|question
 where is jantar mantar|location|LOCATION,9,22
 hi|greet
 goodbye|shut-down
@@ -87,21 +87,21 @@ show me the news related to business|news|NEWSCATEGORY,28,36
 how do i reach pune|direction|TOLOCATION,15,19
 no|negation
 great work|compliment
-how to cope with loneliness|search-general
+how to cope with loneliness|question
 how to go to sinhagad|direction|TOLOCATION,13,21
 great job|compliment
-which is the greatest tv series of all time|search-general|QUERY,9,43
+which is the greatest tv series of all time|question|QUERY,9,43
 give me wikipedia article on india|search-wikipedia|QUERY,29,34
 give me article on animal kingdom|search-general|QUERY,19,33
 not at all|negation
 how do i go to sarnath|direction|TOLOCATION,15,22
-how to code in c plus plus|search-general
+how to code in c plus plus|question
 bye bye|shut-down
 hello|greet
 brilliant|compliment
 what is the news in sports today|news|NEWSCATEGORY,20,26|DATE,27,32
 what does your watch show|time
-what is barclays|search-general|QUERY,8,16
+what is barclays|question|QUERY,8,16
 never|negation
 offcourse|affirmation
 what is the time now|time
@@ -113,12 +113,12 @@ where am i at this moment|self-location
 who is narendra modi|question|QUERY,8,20
 search for himalayas|search-general|QUERY,11,20
 explore time shift|search-general|QUERY,8,18
-how to paint walls|search-general
+how to paint walls|question
 where am i|self-location
 run python|launch|SOFTWARE,4,10
 open notepad|launch|SOFTWARE,5,12
 what is the time|time
-which noble gas is most inert|search-general
+which noble gas is most inert|question
 hello|greet
 sleep now|shut-down
 hi|greet
@@ -138,6 +138,7 @@ show me thai restaurants in pune|search-restaurants|CUISINE,8,12|LOCATION,28,32
 i do not want this|negation
 open calculator|launch|SOFTWARE,5,15
 search barrack obama|search-general|QUERY,7,20
+who is barrack obama|question|QUERY,7,20
 look up hundai|search-general|QUERY,8,14
 hey|greet
 open excel|launch|SOFTWARE,5,10
@@ -146,9 +147,9 @@ good night|shut-down
 direct me to pondicherry|direction|TOLOCATION,13,24
 show me the time|time
 what is my location|self-location
-which duct tape is better|search-general
-does injection hurt|search-general
-why does elon musk hate facebook|search-general
+which duct tape is better|question
+does injection hurt|question
+why does elon musk hate facebook|question
 hi|greet
 sleep|shut-down
 what is watergate scandal|question|QUERY,8,25
@@ -192,7 +193,7 @@ hello|greet
 lookup for Ellora caves|search-general|QUERY,11,23
 show me wikipedia article on the last supper|search-wikipedia|QUERY,29,44
 show me the article on trust|search-general|QUERY,23,28
-tell me about schrodinger's cat|search-general|QUERY,14,31
+tell me about schrodinger's cat|question|QUERY,14,31
 certainly|affirmation
 bravo|compliment
 good bye|shut-down
@@ -206,7 +207,7 @@ open chrome|launch|SOFTWARE,5,11
 what happened in politics today|news|NEWSCATEGORY,17,25|DATE,26,31
 obviously|affirmation
 hi|greet
-how does machine learning work|search-general
+how does machine learning work|question
 i m hungry|search-restaurants
 where is kutub minar in india|location|LOCATION,9,29
 who is senator of texas|question|QUERY,7,23
@@ -222,7 +223,7 @@ goodbye|shut-down
 search wikipedia for list of fastest men on earth|search-wikipedia|QUERY,21,49
 certainly|affirmation
 never|negation
-can you get me the list of presidents of india|search-general|QUERY,15,46
+can you get me the list of presidents of india|question|QUERY,15,46
 i am hungry|search-restaurants
 what is the time at this exact moment|time
 search for wikipedia donation|search-general|QUERY,11,29
@@ -232,49 +233,49 @@ amazing work|compliment
 look for world war 3|search-general|QUERY,9,20
 sleep|shut-down
 what does your watch show|time
-tell me about jesus christ|search-general|QUERY,14,26
+tell me about jesus christ|question|QUERY,14,26
 execute python|launch|SOFTWARE,8,14
-why is wikipedia free|search-general
+why is wikipedia free|question
 obviously|affirmation
 good night|shut-down
 point to great wall of china on map|location|LOCATION,9,28
-is it too difficult to start indian restaurant|search-general
+is it too difficult to start indian restaurant|question
 explore time travel|search-general|QUERY,8,19
 look up a wonderful song|search-general|QUERY,8,24
-should i go for engineering|search-general
+should i go for engineering|question
 how to go from dubai to taiwan|direction|FROMLOCATION,15,20|TOLOCATION,24,30
 how to go to himachal|direction|TOLOCATION,13,21
 please show me the road from lahore to chandigarh|direction|FROMLOCATION,29,35|TOLOCATION,39,49
-how much does a flight cost from hyderabad to jaipur|search-general
-should i be a waiter|search-general
-who was hitler|search-general|QUERY,8,14
-who gives money to wikipedia|search-general
+how much does a flight cost from hyderabad to jaipur|question
+should i be a waiter|question
+who was hitler|question|QUERY,8,14
+who gives money to wikipedia|question
 fetch me wikipedia article on nehru|search-wikipedia|QUERY,30,35
 can you give me directions to tamil nadu|direction|TOLOCATION,30,40
-can you give me directions on my life|search-general
-do trees sing|search-general
+can you give me directions on my life|question
+do trees sing|question
 lookup on satellite launch|search-general|QUERY,10,26
 lauch nautilus|launch|SOFTWARE,6,14
 launch explorer|launch|SOFTWARE,7,15
 how to go to london|direction|TOLOCATION,13,19
 definitely|affirmation
 nah|negation
-how do i control my restaurant|search-general
+how do i control my restaurant|question
 i would like to see some information on tardis|search-general|QUERY,40,46
-where did amy go|search-general
+where did amy go|question
 offcourse|affirmation
 yes|affirmation
 please fetch me information regarding social science|search-general|QUERY,38,52
-how do i write hell world program in c|search-general
-how to start dancing|search-general
+how do i write hell world program in c|question
+how to start dancing|question
 pinpoint cambodia on map|location|LOCATION,9,17
 show me information regarding coffee|search-general|QUERY,30,36
-how do i write poems|search-general
-how do i start playing flute|search-general
+how do i write poems|question
+how do i start playing flute|question
 how do i visit mogolia|direction|QUERY,15,22
 what is my surroundings called|self-location
 information on new york please|search-general|QUERY,15,23
-give me something on headache|search-general|QUERY,21,29
+give me something on headache|question|QUERY,21,29
 give me directions from margao to ponda|direction|FROMLOCATION,24,30|TOLOCATION,34,39
 how do i travel from shimla to manali|direction|FROMLOCATION,21,27|TOLOCATION,31,37
 hi|greet
@@ -284,28 +285,28 @@ i want to be fairy|search-general
 search food stalls around ponda|search-restaurants|LOCATION,26,31
 look up food wastage|search-general|QUERY,8,20
 how to travel to jwalamukhi|direction|TOLOCATION,17,27
-what are support vector machines|search-general|QUERY,9,32
+what are support vector machines|question|QUERY,9,32
 show me information on time loop|search-general|QUERY,23,32
 where am i|self-location
-tell me about isro launch|search-general|QUERY,14,25
-does launching new car help ford|search-general
-what are support vector machines|search-general|QUERY,9,32
+tell me about isro launch|question|QUERY,14,25
+does launching new car help ford|question
+what are support vector machines|question|QUERY,9,32
 get me details of narcos|search-general|QUERY,18,24
 what time is it in london|time|LOCATION,19,25
 show me some news in afganistan|news|LOCATION,21,31
 what happened in business today|news|NEWSCATEGORY,17,25|DATE,26,31
-what happened to michael jackson|search-general
+what happened to michael jackson|question
 tell me what happened in india today|news|LOCATION,25,30|DATE,31,36
 i am hungry|search-restaurants
 how do i visit washington|direction|TOLOCATION,15,25
-how do i use dry cleaner|search-general
+how do i use dry cleaner|question
 give me a receipe of mango shake|search-general|QUERY,8,32
-can you provide me way to build ship|search-general|QUERY,19,36
+can you provide me way to build ship|question|QUERY,19,36
 can you provide me list of hotels around|search-restaurants
 hunger is killing me|search-restaurants
 i am terribly hungry|search-restaurants
-what do you know about david tennant|search-general|QUERY,23,36
-how does barclays work|search-general
+what do you know about david tennant|question|QUERY,23,36
+how does barclays work|question
 where is honda's office|location|LOCATION,9,23
 search time travel|search-general|QUERY,7,18
 try getting information on Santhals|search-general|QUERY,27,35
@@ -330,7 +331,7 @@ please help me launching powerpoint|launch|SOFTWARE,25,35
 can you launch paint for me|launch|SOFTWARE,15,20
 can you get news for me|news
 can you pull out wikipedia article on neural network|search-wikipedia|QUERY,38,52
-who is wikipedia's founder|search-general|QUERY,7,26
+who is wikipedia's founder|question|QUERY,7,26
 try pulling wikipedia article on wikipedia|search-wikipedia|QUERY,33,42
 try getting list of indian food stalls around|search-restaurants|CUISINE,20,26
 get food receipes from india|search-general|QUERY,4,28
@@ -366,7 +367,8 @@ show me restaurants serving burgers in raipur|search-restaurants|CUISINE,28,35|L
 show me restaurants serving burgers|search-restaurants|CUISINE,28,35
 get me restaurants serving malwani fish|search-restaurants|CUISINE,27,39
 show me the route to pune from mumbai|direction|TOLOCATION,21,25|FROMLOCATION,31,37
-who is chaitanya sharma|search-general|QUERY,7,23
+who is chaitanya sharma|question|QUERY,7,23
 can you book a cab for me at 3.20 PM from Malad to Borivali|bookcab|TIME,31,38|FROMLOCATION,44,49|TOLOCATION,53,61
 Remind me at 8.30 to bring my clothes|reminder|TIME,15,19|REMINDERTEXT,20,39
 give me route from ratnagiri to goa|direction|FROMLOCATION,21,30|TOLOCATION,34,37
+Tell me the time in wilmington|time|LOCATION,20,30

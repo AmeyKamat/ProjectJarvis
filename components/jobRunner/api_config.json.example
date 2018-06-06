@@ -1,0 +1,22 @@
+{
+	"GOOGLE_API": {
+		"URL": {
+			"GEOCODING": "https://maps.googleapis.com/maps/api/geocode/json",
+			"GEOLOCATION": "https://www.googleapis.com/geolocation/v1/geolocate",
+			"SEARCH": "https://www.google.com/search?q="
+		},
+		"KEY": ""
+	},
+	"TIMEZONE_API": {
+		"URL": {
+			"GET_TIMEZONE": "http://api.timezonedb.com/v2/get-time-zone"
+		},
+		"KEY": ""
+	},
+	"DUCKDUCKGO_API": {
+		"URL": {
+			"QUESTION": "https://api.duckduckgo.com/"
+		},
+		"KEY": ""
+	}
+}

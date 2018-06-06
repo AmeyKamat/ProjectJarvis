@@ -8,7 +8,7 @@ class SementicAnalyserComponent(Component):
 	sementicAnalyser = SementicAnalyser()
 
 	@handler("MessageReceivedEvent")
-	def handleMessageReceivedEvent(self, message):
-		intent, confidence, entities = self.sementicAnalyser.analyse(message)
-		self.fire(MessageAnalysedEvent(intent, confidence, entities))
+	def handleMessageReceivedEvent(self, request):
+		request.intent, request.confidence, request.entities = self.sementicAnalyser.analyse(request.message)
+		self.fire(MessageAnalysedEvent(request))
 

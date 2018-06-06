@@ -9,8 +9,14 @@ from components.SementicAnalyserComponent import SementicAnalyserComponent
 from components.ContextBuilderComponent import ContextBuilderComponent
 from components.EntityAnalyserComponent import EntityAnalyserComponent
 from components.EntityPreprocessorComponent import EntityPreprocessorComponent
-from components.JobRunnerComponent import JobRunnerComponent
 from components.DialogGeneratorComponent import DialogGeneratorComponent
+
+from components.jobRunner.TimeJobRunnerComponent import TimeJobRunnerComponent
+from components.jobRunner.GreetJobRunnerComponent import GreetJobRunnerComponent
+from components.jobRunner.ComplimentJobRunnerComponent import ComplimentJobRunnerComponent
+from components.jobRunner.QuestionJobRunnerComponent import QuestionJobRunnerComponent
+from components.jobRunner.SearchGeneralJobRunnerComponent import SearchGeneralJobRunnerComponent
+
 from gateways.WSGateway import WSGateway, Root
 
 IP_ADDR = "0.0.0.0"
@@ -22,8 +28,14 @@ BOOTSTRAP_MODULES = {
 		ContextBuilderComponent(),
 		EntityAnalyserComponent(),
 		EntityPreprocessorComponent(),
-		JobRunnerComponent(),
 		DialogGeneratorComponent()
+	],
+	"jobRunnerComponents": [
+		TimeJobRunnerComponent(),
+		GreetJobRunnerComponent(),
+		ComplimentJobRunnerComponent(),
+		QuestionJobRunnerComponent(),
+		SearchGeneralJobRunnerComponent()
 	],
 	"gateways": [
 		WSGateway(),
@@ -44,6 +56,10 @@ def bootstrapAppComponents(app, appComponents):
 	for appComponent in appComponents:
 		appComponent.register(app)
 
+def bootstrapJobRunnerComponents(app, jobRunnerComponents):
+	for jobRunnerComponent in jobRunnerComponents:
+		jobRunnerComponent.register(app)
+
 def bootstrapGateways(app, gateways):
 	for gateway in gateways:
 		gateway.register(app)
@@ -60,6 +76,7 @@ def bootstrapCircuitComponents(app, circuitComponents):
 
 app = Server((IP_ADDR, PORT))
 bootstrapAppComponents(app, BOOTSTRAP_MODULES["appComponents"])
+bootstrapJobRunnerComponents(app, BOOTSTRAP_MODULES["jobRunnerComponents"])
 bootstrapGateways(app, BOOTSTRAP_MODULES["gateways"])
 bootstrapDispatchers(app, BOOTSTRAP_MODULES["dispatchers"])
 bootstrapCircuitComponents(app, BOOTSTRAP_MODULES["circuitComponents"])

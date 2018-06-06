@@ -6,6 +6,6 @@ class EntityPreprocessorComponent(Component):
 
 	
 	@handler("EntityAnalysedEvent")
-	def handleEntityAnalysedEvent(self, intent, entities):
-		self.fire(EntityPreprocessedEvent(intent, entities))
+	def handleEntityAnalysedEvent(self, context):
+		self.fire(EntityPreprocessedEvent(context))
 

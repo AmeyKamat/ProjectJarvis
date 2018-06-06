@@ -1,0 +1,46 @@
+{
+		"time": [
+			{
+				"message": "It is {} in {}",
+				"parameters": ["datetime", "location"]
+			}
+		],
+		"compliment": [
+			{ 
+				"message": "Thank you",
+				"parameters": []
+			},
+			{ 
+				"message": "That is my duty",
+				"parameters": []
+			}
+		],
+		"greet": [
+			{ 
+				"message": "hello",
+				"parameters": []
+			},
+			{ 
+				"message": "hi",
+				"parameters": []
+			}
+		],
+		"question": [
+			{
+				"message": "According to {}, {}",
+				"parameters": ["source", "answer"]
+			}
+		],
+		"search-general": [
+			{
+				"message": "This is what I found on Google",
+				"parameters": []
+			}
+		],
+		"unknown": [
+			{
+				"message": "I did not understand what you just said",
+				"parameters": []
+			}
+		]
+	}

@@ -7,8 +7,8 @@ class EntityAnalyserComponent(Component):
 
 	
 	@handler("ContextBuiltEvent")
-	def handleContextBuiltEvent(self, intent, entities):
-		self.fire(EntityAnalysedEvent(intent, entities))
+	def handleContextBuiltEvent(self, context):
+		self.fire(EntityAnalysedEvent(context))
 
 
 

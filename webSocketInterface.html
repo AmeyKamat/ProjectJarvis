@@ -7,12 +7,49 @@
   if ("WebSocket" in window)
   {
      var ws = new WebSocket("ws://localhost:8000/websocket");
+     var voices = window.speechSynthesis.getVoices();
+
+     window.speechSynthesis.onvoiceschanged = function(e) {
+        voices = window.speechSynthesis.getVoices();
+        console.log("a")
+      };
+
+
+     function speak(text){
+        window.speechSynthesis.cancel()
+        var msg = new SpeechSynthesisUtterance();
+        
+        msg.voice = voices[7]; // Note: some voices don't support altering params
+        console.log(msg.voice)
+        msg.voiceURI = 'native';
+        msg.volume = 1; // 0 to 1
+        msg.rate = 0.8; // 0.1 to 10
+        msg.pitch = 0; //0 to 2 
+        msg.text = text;
+        window.speechSynthesis.speak(msg); 
+        var r = setInterval(function () {
+                if (!window.speechSynthesis.speaking) clearInterval(r);
+                else window.speechSynthesis.resume();
+            }, 14000);    
+     }
+
+     
+        
+
+
      ws.onopen = function(){};
      
      ws.onmessage = function (evt) 
      { 
-        var received_msg = evt.data;
-        document.getElementById("3").innerHTML += received_msg + "<br/>"
+      
+        var data = JSON.parse(evt.data);
+        console.log(data)
+        if(data.result != undefined && data.result.url != undefined){
+          window.open(data.result.url, '_blank');
+        }
+        document.getElementById("instruction-text").innerHTML = data.dialogue;
+        speak(data.dialogue)
+        
      };
      ws.onclose = function()
      { 
@@ -21,11 +58,16 @@
 
      if ('webkitSpeechRecognition' in window) {
         var recognition = new webkitSpeechRecognition();
-        recognition.continuous = true;
-        recognition.interimResults = true;
+        recognition.continuous = false;
+        recognition.interimResults = false;
         recognition.lang = "en-US"
         var final_transcript = '';
         isStarted = false;
+
+
+
+        
+        
 
         recognition.onstart = function() {};
 
@@ -34,18 +76,9 @@
         recognition.onend = function() {};
 
         recognition.onresult = function(event) {
-          var interim_transcript = '';
-          for (var i = event.resultIndex; i < event.results.length; ++i) {
-            if (event.results[i].isFinal) {
-              final_transcript += event.results[i][0].transcript;
-              ws.send(final_transcript);
-              document.getElementById("3").innerHTML += "Sent Message: " + final_transcript + "<br/>"
-              final_transcript = ""
-              interim_transcript = ""
-            } else {
-              interim_transcript += event.results[i][0].transcript;
-            }
-          }
+          var final_transcript = event.results[event.results.length - 1][0].transcript;
+          document.getElementById("instruction-text").innerHTML = "";
+          ws.send(final_transcript);
         };
 
         window.onkeydown=function(ev)
@@ -54,6 +87,7 @@
           key = e.keyCode
           if ((key===13) && (e.location===3)) {
             if(isStarted == false)
+              document.getElementById("instruction-text").innerHTML = "Speak Now";
             recognition.start()
             isStarted = true
           }
@@ -65,6 +99,7 @@
           key = e.keyCode
           if ((key===13) && (e.location===3)) {
             if(isStarted = true){
+              document.getElementById("instruction-text").innerHTML = "Recognizing...";
               recognition.stop()
               isStarted = false
             }
@@ -84,12 +119,211 @@
 </script>
 </head>
 <body>
-  <input type="text" id="1"/>
-  <button id="2" onclick="run()">try</button>
-  <div id=3></div>
-	<div id="sse">
-		<a href="javascript:WebSocketTest()">Run WebSocket</a>
-	</div>
+  <style type="text/css">
+    body{
+      background:url('http://jarvis.ai-dot.net/images/1.jpg');
+    }
+    
+    .container{
+      display: flex;
+       flex-direction: row;
+    }
+    .container div:first-child(1){
+      background-color:#ccffcc;
+      flex: 1;
+      height:100px;
+      width:100px;
+      text-align: center;  
+    }
+
+    .jarvis-loader {
+      -webkit-flex: 2;
+              flex: 2;
+     
+    }
+
+    p.jarvis-text{
+      font-family:Arial;
+      z-index: 999;
+      margin-left:19px;
+      font-size:46px;
+      margin-top:-26px;
+      color:#fff;/*4db8ff*/
+      paddig:0px;
+      position:relative;
+      -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+      -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+      animation: neon2 1.5s ease-in-out infinite alternate;
+      text-shadow: 0 0 15px #b3e0ff;
+    }
+
+    #loader-wrapper{
+        position: fixed;
+        top: 20%;
+        left:37%;
+        width: 300px;
+        height: 300px;
+       margin-left:30px;
+        
+    }
+    
+    #loader {
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        height: 100%;
+        margin: -175px 0 0 -175px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #4db8ff;
+        border-bottom-color: #b3e0ff;
+        border-right-color: #66c2ff;
+        border-left-color: #80ccff;
+        box-shadow: 0 0 15px #2187e7;
+        transform: translate(-50%, -50%);
+     
+        -webkit-animation: spin 30s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 30s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    }
+
+    #loader1:before {
+        content: "";
+        position: absolute;
+        top: 70px;
+        left: 70px;
+        right: 70px;
+        bottom: 70px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-color: #4398ba;
+     
+        border-style:dotted;
+      
+        -webkit-animation: spin 18s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+          animation: spin 18s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    }
+ 
+    #loader1:after {
+        content: "";
+        position: absolute;
+        top: 55px;
+        left: 55px;
+        right: 55px;
+        bottom: 55px;
+        border-radius: 50%;
+        border-color: #59c1eb;
+       border-width:5px;  
+        border-style:double dashed solid dotted ;
+      box-shadow: 0 0 40px #2187e7;
+        -webkit-animation: spin 60s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+          animation: spin 60s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    }
+
+ 
+    #loader:before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-color: #1d5ca9;
+     
+        border-style:dotted;
+      
+        -webkit-animation: spin 18s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+          animation: spin 18s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    }
+ 
+    #loader:after {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-color: #429bc0;
+       border-width:5px;  
+        border-style:dotted solid;
+        -webkit-animation: spin 60s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+          animation: spin 60s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    }
+ 
+    @-webkit-keyframes spin {
+        0%   {
+            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(0deg);  /* IE 9 */
+            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(360deg);  /* IE 9 */
+            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+    }
+
+    @keyframes spin {
+        0%   {
+            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(0deg);  /* IE 9 */
+            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(360deg);  /* IE 9 */
+            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+    }
+
+
+
+    @-webkit-keyframes neon2 {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+      }
+      to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+      }
+    }
+    p.instruction-text{
+      display: block;
+      font-family:Arial;
+      z-index: 999;
+      left: 0%;
+        top: 47vh;
+        margin: -175px 0 0 -175px;
+        text-align: center;
+      font-size:18px;
+      color:#fff;/*4db8ff*/
+      paddig:0px;
+      width:400%;
+      position: relative;
+      -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+      -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+      animation: neon2 1.5s ease-in-out infinite alternate;
+      text-shadow: 0 0 15px #b3e0ff;
+    }
+
+  </style>
+  <div class="container">
+    <div class="jarvis-loader">
+      <div id="loader-wrapper">
+        <div id="loader">
+          <div id="loader1"></div> 
+        </div>
+        <p class="jarvis-text">J.A.R.V.I.S</p>
+        <p class="instruction-text" id="instruction-text">Press Numpad Enter to Speak</p> 
+      </div>
+
+    </div>
+  </div>
+  </div>
+  
 </body>
 </html>
-© 2018 Git
